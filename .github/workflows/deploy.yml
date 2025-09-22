@@ -1,0 +1,63 @@
+# ワークフローの名前
+name: Deploy React App to GitHub Pages
+
+# ワークフローが実行されるタイミングを定義
+on:
+  # mainブランチにプッシュされた時に実行
+  push:
+    branches: ["main"]
+  # Actionsタブから手動で実行することも可能にする
+  workflow_dispatch:
+
+# 権限の設定
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 実行されるジョブを定義
+jobs:
+  # buildジョブ：アプリケーションをビルドする
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. リポジトリのコードをチェックアウト
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # 2. Node.jsの環境をセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18" # あなたのNode.jsのバージョンに合わせて変更可能
+          cache: 'npm'
+      
+      # 3. 依存関係をインストール（npm ciはnpm installより高速でCI向き）
+      - name: Install dependencies
+        run: npm ci
+      
+      # 4. アプリケーションをビルド
+      - name: Build application
+        run: npm run build
+      
+      # 5. ビルド成果物をアーティファクトとしてアップロード
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './build'
+
+  # deployジョブ：ビルド成果物をデプロイする
+  deploy:
+    needs: build # buildジョブの完了を待つ
+    runs-on: ubuntu-latest
+    
+    # デプロイ環境の指定
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+      # 1. アーティファクトをデプロイ
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
