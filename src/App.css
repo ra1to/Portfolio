@@ -1,0 +1,159 @@
+:root {
+  --black-color: #010000;
+  --white-color: #ffffff;
+  --lightgray-color: #e6e6e6;
+}
+
+.App {
+  font-size: 18px;
+  height: 100vh;
+  width: 100%;
+  /* font-weight: 400; */
+  /* font-style: normal; */
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background: black;
+  color: white;
+  height: 90px;
+  position: fixed;
+  z-index: 10;
+}
+
+header .logo h3 {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+nav ul li a {
+  font-size: 19px;
+  text-decoration: none;
+  color: var(--white-color);
+  transition: all 0.2s;
+}
+
+nav ul li a:hover {
+  color: #48b4af;
+}
+
+.container {
+  height: 100vh;
+  padding: 120px;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.profileImage {
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+img {
+  width: 300px;
+  height: 500px;
+}
+
+.service {
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+
+#skill img {
+  object-fit: cover;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  height: 300px;
+}
+
+#skill button {
+  margin-bottom: 100px;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transform: rotateX(-20deg) translateY(-70px);
+  transform-style: preserve-3d;
+  perspective: 800px;
+  user-select: none;
+  cursor: grab;
+}
+
+.carousel-image {
+  /* 既存のスタイル... */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* ★ この一行を追加 */
+  overflow: hidden;
+}
+
+.carousel-image img {
+  /* サイズを親要素(200x200の枠)に完全に一致させる */
+  max-width: 80%;
+  max-height: 80%;
+  
+  /* 縦横比を維持して、はみ出さずに収める */
+  object-fit: contain;
+  
+  /* (念のため) flexboxの影響で画像が縮まないようにする */
+  flex-shrink: 0;
+}
+
+.carousel-image .Schedule {
+  /* 親要素(.carousel-image)を基準に絶対配置する */
+  position: absolute;
+
+  /* 上下左右の中央に配置するための設定 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* 文字の見栄えを調整 */
+  color: white;
+  font-size: 1.5rem; /* 約24px */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    transform: rotateX(-10deg) scale(.6) translateY(-60px);
+  }
+}
