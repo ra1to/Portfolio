@@ -16,7 +16,6 @@ gsap.registerPlugin(Observer);
 const HomePage = () => {
   const carouselRef = useRef(null);
 
-  // ★ このuseEffectの中を修正しました
   useEffect(() => {
     const carousel = carouselRef.current;
     const images = gsap.utils.toArray('.carousel-image', carousel);
@@ -24,7 +23,7 @@ const HomePage = () => {
     const radius = 242;
     const progress = { value: 0 };
 
-    // ★ 修正点 1: Observer.createの結果を変数に保存する
+    //Observer.createの結果を変数に保存する
     const observerInstance = Observer.create({
       target: carousel,
       type: "wheel,pointer",
@@ -72,8 +71,8 @@ const HomePage = () => {
 
       <p>
         Raito codeです。普段は個人でWeb系の情報発信をYoutubeやTwitterにて行っています。<br/>
-        主にHTML/CSS/Javascript/Reactをメインに取り扱っており、次はGoとPythonを学習しようかと思っています。<br/>
-        趣味は個人でプログラミングの学習を行うことです。
+        主にHTML/CSS/Javascript/Reactをメインに取り扱っており、次はGoとPythonを学習する予定です。<br/>
+        趣味は筋トレです。（最近増量を頑張ってます）
       </p>
 
       <section className="page-section" id="services">
