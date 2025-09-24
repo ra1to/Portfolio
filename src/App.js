@@ -1,8 +1,8 @@
 import './App.css';
 import BlogPage from './compornents/BlogPage';
-import Header from './compornents/Header';
+import Header from './compornents/HeaderCompornents/Header';
 import HomePage from './compornents/HomePage';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 function App() {

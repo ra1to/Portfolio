@@ -1,14 +1,15 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import HeaderVideo from './HeaderVideo';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
   return (
     <header>
+      <HeaderVideo />
         <div className="logo">
             <h3>ポートフォリオ</h3>
         </div>
-
       <nav>
         <ul>
           <li>
