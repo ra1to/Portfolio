@@ -5,7 +5,7 @@ import SkillsSection from './SkillCompornent/SkillsSection';
 const HomePage = () => {
   return (
     <div className="container text-center">
-      <h1>Raito code</h1>
+      <h1>Ra1to code</h1>
 
       <img src={profileImage} className="profileImage" alt="プロフィール画像"/>
 
