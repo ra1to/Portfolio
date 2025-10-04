@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,17 +8,17 @@ const skills = [
   // Frontend
   {
     name: "HTML/CSS", 
-    level: 80, 
+    level: 90, 
     category: "Frontend",
     icon: "devicon-html5-plain",
     description: "Creating responsive, accessible and semantic markup with modern CSS techniques"
   },
   { 
-    name: "JavaScript", 
+    name: "Typescript", 
     level: 60, 
     category: "Frontend",
-    icon: "devicon-javascript-plain",
-    description: "ES6+, async/await, DOM manipulation, and modern JS patterns"
+    icon: "devicon-typescript-plain",
+    description: "ES6+, async/await, DOM manipulation, and modern TS patterns"
   },
   { 
     name: "React", 
@@ -35,13 +35,11 @@ const skills = [
     description: "Utility-first approach for rapid UI development with custom configurations"
   },
 
-  // Programming Languages
-  { 
-    name: "Python", 
-    level: 60, 
-    category: "Programming Language",
-    icon: "devicon-python-plain",
-    description: "Scripting, data analysis, and automation"
+  { name: "Next.js", 
+    level: 70, 
+    category: "Frontend",
+    icon: "devicon-nextjs-plain",
+    description: "Utility-first approach for rapid UI development with custom configurations"
   },
 
   // Backend
@@ -53,11 +51,11 @@ const skills = [
     description: "Server-side JavaScript, RESTful APIs, and microservices"
   },
   { 
-    name: "PostgreSQL", 
-    level: 52, 
+    name: "Supabase", 
+    level: 65, 
     category: "Backend",
-    icon: "devicon-postgresql-plain",
-    description: "Relational database design, complex queries, and performance optimization"
+    icon: "devicon-supabase-plain",
+    // description: "Relational database design, complex queries, and performance optimization"
   },
 
   // Tools
@@ -84,7 +82,7 @@ const skills = [
   },
 ];
 
-const categories = ["All", "Programming Language","Frontend", "Backend", "Tools"];
+const categories = ["All","Frontend", "Backend", "Tools"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -142,7 +140,6 @@ export const SkillsSection = () => {
   const getCategoryStyle = (category) => {
     switch(category) {
       case "Frontend": return "bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border-blue-500/20";
-      case "Programming Language": return "bg-gradient-to-br from-violet-500/10 to-purple-500/10 border-violet-500/20";
       case "Backend": return "bg-gradient-to-br from-emerald-500/10 to-green-500/10 border-emerald-500/20";
       case "Tools": return "bg-gradient-to-br from-amber-500/10 to-yellow-500/10 border-amber-500/20";
       default: return "bg-gradient-to-br from-gray-500/10 to-slate-500/10 border-gray-500/20";
