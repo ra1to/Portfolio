@@ -1,6 +1,6 @@
 import React from 'react';
 import profileImage from '../Images/blackholl.gif';
-import SkillsSection from './SkillCompornent/SkillsSection';
+import {SkillsSection} from './SkillComponents/SkillsSection';
 
 const HomePage = () => {
   return (
