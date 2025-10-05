@@ -109,7 +109,7 @@ export const SkillsSection = () => {
     return () => {
       document.head.removeChild(link);
     };
-  }, []);
+  }, [setMounted]);
 
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "All" || skill.category === activeCategory
