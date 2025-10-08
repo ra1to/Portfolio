@@ -87,7 +87,7 @@ const categories = ["All","Frontend", "Backend", "Tools"];
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedSkill, setSelectedSkill] = useState(null);
-  const [setMounted] = useState(false);
+  const [,setMounted] = useState(false);
   const sectionRef = useRef(null);
   
   useEffect(() => {

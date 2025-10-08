@@ -1,6 +1,7 @@
 import React from 'react';
 import profileImage from '../Images/blackholl.gif';
 import {SkillsSection} from './SkillComponents/SkillsSection';
+import SkillCarousel from './SkillComponents/SkillCarousel';
 
 const HomePage = () => {
   return (
@@ -66,6 +67,7 @@ const HomePage = () => {
       <section className="page-section" id="services">
       </section>
       <SkillsSection />
+      <SkillCarousel/>
     </div>
   );
 }
