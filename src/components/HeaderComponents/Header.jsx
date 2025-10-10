@@ -17,7 +17,7 @@ const Header = () => {
             <Link to="/blog">ブログ</Link>
           </li>
           <li>
-            <a href="/blog">SNS</a>
+            <a href="https://twitter.com/your_account" target="_blank" rel="noopener noreferrer">SNS</a>
           </li>
         </ul>
       </nav>

@@ -20,9 +20,7 @@ const HomePage = () => {
         <div className="service">
           <div className="text-center">
             <h2 className="section-heading text-uppercase">PORTFOLIO</h2>
-            <h3 className="section-subheading text-muted mb-5">
-              私が作った作品一覧です
-            </h3>
+            <h3 className="section-subheading text-muted mb-5">私が作った作品一覧です</h3>
           </div>
           <div className="row text-center">
             <div className="col-md-4">
@@ -58,7 +56,6 @@ const HomePage = () => {
               <p className="text-muted">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
                 maxime quam architecto quo inventore harum ex magni, dicta
-                impedit.
               </p>
             </div>
           </div>
@@ -66,8 +63,8 @@ const HomePage = () => {
       </section>
       <section className="page-section" id="services">
       </section>
-      <SkillsSection />
-      <SkillCarousel/>
+        <SkillsSection />
+        <SkillCarousel/>
     </div>
   );
 }
